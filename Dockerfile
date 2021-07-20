@@ -7,20 +7,20 @@ RUN ln -snf /usr/share/zoneinfo/$timezone /etc/localtime \
 
 RUN yes | unminimize
 
-RUN apt-get update
-RUN apt-get install -y git-core gnupg flex bison build-essential zip curl \
+RUN apt-get update \
+ && apt-get install -y git-core gnupg flex bison build-essential zip curl \
   zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev \
   x11proto-core-dev libx11-dev lib32z1-dev libgl1-mesa-dev libxml2-utils \
   xsltproc unzip fontconfig rsync libssl-dev ant bc xxd pkg-config \
   libglib2.0-dev libcap-dev libattr1-dev autoconf libtool locales \
   bash-completion man manpages-posix golang libncurses5 iputils-ping \
-  dnsutils autossh socat ssvnc
+  dnsutils autossh socat ssvnc gitk libswitch-perl
 
 RUN apt-get install -y openjdk-11-jdk-headless
 RUN apt-get install -y vim tmux sudo net-tools netcat uml-utilities dnsmasq iptables iproute2 silversearcher-ag xsel doxygen graphviz
 RUN apt-get install -y python python3 python3-pip
 RUN pip3 install pipenv
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y meld adwaita-icon-theme-full adb
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y meld adwaita-icon-theme-full
 
 RUN curl -o /usr/local/bin/repo https://storage.googleapis.com/git-repo-downloads/repo \
  && chmod a+x /usr/local/bin/repo
