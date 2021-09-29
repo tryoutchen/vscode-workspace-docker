@@ -14,7 +14,8 @@ RUN apt-get update \
   xsltproc unzip fontconfig rsync libssl-dev ant bc xxd pkg-config \
   libglib2.0-dev libcap-dev libattr1-dev autoconf libtool locales \
   bash-completion man manpages-posix golang libncurses5 iputils-ping \
-  dnsutils autossh socat ssvnc gitk libswitch-perl cmake cpio e2tools
+  dnsutils autossh socat ssvnc gitk libswitch-perl cmake cpio e2tools \
+  libelf-dev device-tree-compiler
 
 RUN apt-get install -y openjdk-11-jdk-headless
 RUN apt-get install -y vim tmux sudo net-tools netcat uml-utilities dnsmasq iptables iproute2 silversearcher-ag xsel doxygen graphviz
